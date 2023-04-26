@@ -1,0 +1,60 @@
+---
+import { getCollection } from "astro:content";
+import { Picture } from "@astrojs/image/components";
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/Container.astro";
+import Sectionhead from "@components/Sectionhead.astro";
+
+// Filter team entries with 'draft: false' & date before current date
+const publishedTeamMembers = await getCollection("team", ({ data }) => {
+  return !data.draft && data.publishDate < new Date();
+});
+---
+
+<Layout title="About">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">À propos de mon entreprise</Fragment>
+      <Fragment slot="desc">Une équipe passionnée par la réussite des entrepreneurs.</Fragment>
+    </Sectionhead>
+
+    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
+      <h2 class="font-bold text-3xl text-canvas-800">
+        Les plus d’un Conseiller Rivalis.
+      </h2>
+      <p class="text-lg leading-relaxed text-canvas-500">
+        Nous sommes des chefs d’entreprise qui ont envie de soutenir, par le biais d’un accompagnement d’entrepreneur, les autres chefs d’entreprise de notre région. Nous intervenons dans de nombreux secteurs, profitez d’un accompagnement d’excellence pour votre commerce ou encore pour votre entreprise du BTP (menuiserie, plomberie, maçonnerie…).
+      </p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
+      {
+        publishedTeamMembers.map((teamMemberEntry) => (
+          <div class="group">
+            <div class="w-full aspect-square">
+              <Picture
+                src={teamMemberEntry.data.avatar.src}
+                alt={teamMemberEntry.data.avatar.alt}
+                sizes="(max-width: 800px) 100vw, 400px"
+                widths={[200, 400]}
+                aspectRatio="1:1"
+                background="#ffffff"
+                fit="cover"
+                position="center"
+                class="w-full rounded-md transition group-hover:-trancanvas-y-1 group-hover:shadow-xl"
+              />
+            </div>
+
+            <div class="mt-4 text-center">
+              <h2 class="text-lg text-canvas-800">
+                {teamMemberEntry.data.name}
+              </h2>
+              <h3 class="text-sm text-canvas-500">
+                {teamMemberEntry.data.title}
+              </h3>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </Container>
+</Layout>

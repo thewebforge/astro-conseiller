@@ -1,0 +1,44 @@
+---
+import { Icon } from "astro-icon";
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/Container.astro";
+import Sectionhead from "@components/Sectionhead.astro";
+import Contactform from "@components/Contactform.astro";
+---
+
+<Layout title="Contact">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Contact</Fragment>
+      <Fragment slot="desc">Je suis là pour vous aider.</Fragment>
+    </Sectionhead>
+
+    <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-16">
+      <div>
+        <h2 class="font-medium text-2xl text-canvas-800">Contactez Moi</h2>
+        <p class="text-lg leading-relaxed text-canvas-500 mt-3">
+          Vous avez quelque chose à me dire ? Je suis là pour vous aider. Utilisez le formulaire, envoyez-moi un email, ou appelez-moi.
+        </p>
+        <div class="mt-5">
+          <div class="flex items-center mt-2 space-x-2 text-canvas-600">
+            <Icon class="text-canvas-400 w-4 h-4" name="uil:map-marker" />
+            <span>Avignon, France</span>
+          </div><div class="flex items-center mt-2 space-x-2 text-canvas-600">
+            <Icon class="text-canvas-400 w-4 h-4" name="uil:envelope" /><a
+              href="mailto:hello@thewebforge.dev"
+              class="rounded outline-none focus:ring-2 ring-offset-2 ring-links-500">hello@thewebforge.dev</a
+            >
+          </div><div class="flex items-center mt-2 space-x-2 text-canvas-600">
+            <Icon class="text-canvas-400 w-4 h-4" name="uil:phone" /><a
+              href="tel:+33665823689" class="rounded outline-none focus:ring-2 ring-offset-2 ring-links-500">+33 665 823 689</a
+            >
+          </div>
+        </div>
+      </div>
+      <div>
+        <Contactform />
+      </div>
+    </div>
+    <iframe class="w-full mx-auto max-w-4xl mt-16 rounded shadow" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2872.3157307503216!2d4.768120476812224!3d43.95283327108961!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b5ebac94bb46fd%3A0x28f7f90523478040!2sBoostemaboite!5e0!3m2!1sfr!2sfr!4v1682498078188!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="true" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </Container>
+</Layout>

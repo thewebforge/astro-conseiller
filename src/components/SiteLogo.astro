@@ -1,0 +1,13 @@
+---
+import siteInfo from "@data/site-info";
+
+const { ...args } = Astro.props;
+---
+
+<div class="flex gap-4 items-center">
+    <img class="w-16 h-16 rounded-full border border-brand-500" src={siteInfo.logo.src} alt={siteInfo.logo.alt}>
+    <div class="flex flex-col items-start gap-0">
+        <span class="font-bold text-xl text-canvas-700">{siteInfo.name}</span>
+        <span class="font-light text-xs text-canvas-700">{siteInfo.title}</span>
+    </div>
+</div>

@@ -1,0 +1,66 @@
+---
+import Tick from "@icons/Tick.jsx"
+import Link from "@components/ui/Link.astro";
+
+const { plan } = Astro.props;
+---
+
+<article
+  class="flex flex-col w-full order-first lg:order-none border-2 border-brand-500 border-opacity-50 p-6 rounded-md"
+>
+  <div class="text-center">
+    <h4 class="text-lg font-medium text-canvas-500">{plan.name}</h4><p
+      class="mt-3 text-4xl font-bold text-canvas-950 md:text-4xl"
+    >
+      {
+        plan.price && typeof plan.price === "object"
+          ? plan.price.monthly
+          : plan.price
+      }
+      {
+        plan.price &&
+          typeof plan.price === "object" &&
+          plan.price.frequency && (
+            <span class="text-xl font-normal text-canvas-500">
+              HT/{plan.price.frequency}
+            </span>
+          )
+      }
+    </p>
+    {
+      plan.price && typeof plan.price === "object" && plan.price.bonus && (
+        <p class="text-sm font-medium text-canvas-500">
+          <span class="font-bold">+{plan.price.bonus}</span> de la progression
+          de résultat
+        </p>
+      )
+    }
+    <!-- {
+        plan.price.original && (
+          <p class="mt-1 text-xl font-medium text-canvas-400 line-through md:text-2xl">
+            {plan.price.original}
+          </p>
+        )
+      } -->
+  </div>
+  <div class="mt-auto">
+    <ul class="grid mt-8 text-left gap-y-4">
+      {
+        plan.features.map((item) => (
+          <li class="flex items-start gap-3 text-canvas-700">
+            <Tick class="w-6 h-6" />
+            <span>{item}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </div><div class="flex mt-6">
+    <Link
+      href={plan.button.link || "#"}
+      block
+      style={plan.popular ? "primary" : "outline"}
+    >
+      {plan.button.text || "Get Started"}
+    </Link>
+  </div>
+</article>

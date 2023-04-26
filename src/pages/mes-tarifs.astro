@@ -1,0 +1,80 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/Container.astro";
+import Sectionhead from "@components/Sectionhead.astro";
+import Pricing from "@components/Pricing.astro";
+
+const pricing = [
+  {
+    name: "Coaching Découverte",
+    price: "Gratuit",
+    popular: false,
+    features: [
+      "1h de rendez-vous offert",
+      "Situation de votre entreprise",
+      "Point sur vos objectifs",
+      "Axes d’amélioration",
+      "Pas d’engagement",
+    ],
+    button: {
+      text: "OK, j’y vais !",
+      link: "/",
+    },
+  },
+  {
+    name: "0 à 10 salariés",
+    price: {
+      monthly: "550€",
+      frequency: "mois",
+      bonus: "10%",
+    },
+    popular: true,
+    features: [
+      "Accompagnement mensuel",
+      "Forfait unique tout compris",
+      "Pas de surprise ni de surcoût",
+      "Prime basée sur les résultats",
+      "Information sans engagement",
+    ],
+    button: {
+      text: "OK, j’y vais !",
+      link: "#",
+    },
+  },
+  {
+    name: "À partir de 11 salariés",
+    price: {
+      monthly: "770€",
+      frequency: "mois",
+      bonus: "10%",
+    },
+    popular: false,
+    features: [
+      "Accompagnement mensuel",
+      "Forfait unique tout compris",
+      "Pas de surprise ni de surcoût",
+      "Prime basée sur les résultats",
+      "Information sans engagement",
+    ],
+    button: {
+      text: "OK, j’y vais !",
+      link: "/contact",
+    },
+  },
+];
+---
+
+<Layout title="Mes tarifs">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Mes Tarifs</Fragment>
+      <Fragment slot="desc">
+        Simples & Prévisibles. Pas de mauvaises surprises.
+      </Fragment>
+    </Sectionhead>
+
+    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-screen-lg mt-12">
+      {pricing.map((item) => <Pricing plan={item} />)}
+    </div>
+  </Container>
+</Layout>
