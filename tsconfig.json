@@ -16,6 +16,9 @@
       "@data/*": [
         "data/*"
       ],
+      "@icons/*": [
+        "icons/*"
+      ],
       "@layouts/*": [
         "layouts/*"
       ],
@@ -24,7 +27,9 @@
       ],
       "@pages/*": [
         "pages/*"
-      ],
-    }
+      ]
+    },
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js"
   }
 }
