@@ -1,22 +1,21 @@
 ---
-import Container from "@components/Container.astro";
 import CallToAction from "@components/CallToAction.astro";
 import Formules from "@components/Formules.astro";
 import Hero from "@components/Hero.astro";
 import Logos from "@components/Logos.astro";
+import Conseiller from "@components/Conseiller.astro";
 import Layout from "@layouts/Layout.astro";
 ---
 
 <Layout title="">
-  <Container>
-    <Hero />
-    <Formules />
-    <Logos />
-    <CallToAction
-      title="Travaillons ensemble"
-      description="Désormais vous n’êtes plus seul. Je suis votre Conseiller personnel idéal, déjà prêt à vous appeler pour discuter ou vous rencontrer !"
-      cta="J’ai besoin d’un conseiller personnel"
-      url="/contact"
-    />
-  </Container>
+  <Hero />
+  <Formules />
+  <Logos />
+  <Conseiller />
+  <CallToAction
+    title="Travaillons ensemble"
+    description="Désormais vous n’êtes plus seul. Je suis votre Conseiller personnel idéal, déjà prêt à vous appeler pour discuter ou vous rencontrer !"
+    cta="J’ai besoin d’un conseiller personnel"
+    url="/contact"
+  />
 </Layout>

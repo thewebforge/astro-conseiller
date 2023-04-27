@@ -1,13 +1,18 @@
 ---
-import Tick from "@icons/Tick.jsx"
+import TickIcon from "@icons/TickIcon";
 import Link from "@components/ui/Link.astro";
 
 const { plan } = Astro.props;
 ---
 
 <article
-  class="flex flex-col w-full order-first lg:order-none border-2 border-brand-500 border-opacity-50 p-6 rounded-md"
+  class="relative flex flex-col w-full order-first lg:order-none border-2 border-brand-500 border-opacity-50 p-6 pt-20 rounded-md"
 >
+  <div
+    class="mt-1 p-4 w-24 h-24 bg-white border-2 border-brand-500 rounded-full shrink-0 absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10"
+  >
+    <plan.icon class="w-full" />
+  </div>
   <div class="text-center">
     <h4 class="text-lg font-medium text-canvas-500">{plan.name}</h4><p
       class="mt-3 text-4xl font-bold text-canvas-950 md:text-4xl"
@@ -48,7 +53,7 @@ const { plan } = Astro.props;
       {
         plan.features.map((item) => (
           <li class="flex items-start gap-3 text-canvas-700">
-            <Tick class="w-6 h-6" />
+            <TickIcon class="w-6 h-6" />
             <span>{item}</span>
           </li>
         ))

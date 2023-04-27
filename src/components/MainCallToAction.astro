@@ -1,0 +1,35 @@
+---
+import Link from "./ui/Link.astro";
+import PhoneIcon from "@icons/PhoneIcon";
+import CalendarIcon from "@icons/CalendarIcon";
+---
+
+<div class="mt-6 flex flex-col sm:flex-row gap-3">
+    <Link
+      href="tel:+33665823689"
+      target="_blank"
+      class="flex gap-2 items-center justify-center"
+      rel="noopener"
+    >
+      <PhoneIcon
+        main="fill-current"
+        accent="fill-yellow-300"
+        class="w-5 h-5"
+      />
+
+      Appelez-moi
+    </Link>
+    <Link
+      size="lg"
+      style="outline"
+      rel="noopener"
+      href="https://calendarhero.to/decouverte"
+      class="flex gap-2 items-center justify-center"
+      target="_blank"
+    >
+    <CalendarIcon
+    class="w-5 h-5"
+  />
+      Prenons rendez-vous
+    </Link>
+  </div>

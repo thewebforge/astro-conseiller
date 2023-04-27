@@ -3,11 +3,15 @@ import Layout from "@layouts/Layout.astro";
 import Container from "@components/Container.astro";
 import Sectionhead from "@components/Sectionhead.astro";
 import Pricing from "@components/Pricing.astro";
+import DecouverteIcon from "@icons/DecouverteIcon";
+import SmallBizIcon from "@icons/SmallBizIcon";
+import MediumBizIcon from "@icons/MediumBizIcon";
 
 const pricing = [
   {
     name: "Coaching Découverte",
     price: "Gratuit",
+    icon: DecouverteIcon,
     popular: false,
     features: [
       "1h de rendez-vous offert",
@@ -28,6 +32,7 @@ const pricing = [
       frequency: "mois",
       bonus: "10%",
     },
+    icon: SmallBizIcon,
     popular: true,
     features: [
       "Accompagnement mensuel",
@@ -49,6 +54,7 @@ const pricing = [
       bonus: "10%",
     },
     popular: false,
+    icon: MediumBizIcon,
     features: [
       "Accompagnement mensuel",
       "Forfait unique tout compris",
@@ -73,7 +79,7 @@ const pricing = [
       </Fragment>
     </Sectionhead>
 
-    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-screen-lg mt-12">
+    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-screen-lg mt-24">
       {pricing.map((item) => <Pricing plan={item} />)}
     </div>
   </Container>

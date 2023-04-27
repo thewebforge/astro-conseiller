@@ -1,43 +1,33 @@
 ---
-import Link from "@components/ui/Link.astro";
+import Container from "./Container.astro";
+import Section from "@components/Section.astro";
 import Accompagnement from "@icons/illustrations/Accompagnement";
-import { Icon } from "astro-icon";
+import MainCallToAction from "./MainCallToAction.astro";
 ---
 
-<main
-  class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
-  <div class="w-full md:order-1 hidden md:block">
-    <Accompagnement class="w-full" />
-  </div>
-  <div>
-    <p class="text-lg uppercase text-canvas-600 max-w-xl">Entrepreneurs de provence</p>
-    <h1
-      class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
-      Levez-vous tous les matins avec le sourire !
-    </h1>
-    <p class="text-lg mt-4 text-canvas-600 max-w-xl">
-        Je vous accompagne pour faire décoller votre TPE et vous faire atteindre vos objectifs personnels ! Rencontrons-nous, je suis à moins d’une heure de chez vous.
-    </p>
-    <div class="mt-6 flex flex-col sm:flex-row gap-3">
-      <Link
-        href="tel:+33665823689"
-        target="_blank"
-        class="flex gap-1 items-center justify-center"
-        rel="noopener">
-        <Icon class="text-canvas-50 w-5 h-5" name="carbon:phone-voice-filled" />
-
-        Appelez-moi
-      </Link>
-      <Link
-        size="lg"
-        style="outline"
-        rel="noopener"
-        href="https://calendarhero.to/decouverte"
-        class="flex gap-1 items-center justify-center"
-        target="_blank">
-        <Icon class="text-links-500 w-4 h-4" name="carbon:calendar" />
-        Prenons rendez-vous
-      </Link>
+<Section class="pt-16 pb-8 md:pt-12 md:pb-24" aria-labelledby="hero-headline">
+  <Container class="grid lg:grid-cols-2 place-items-center">
+    <picture class="w-full md:order-1 hidden md:block">
+      <Accompagnement class="w-full" />
+    </picture>
+    <div>
+      <hgroup>
+        <p class="text-lg uppercase text-canvas-600 max-w-xl">
+          Entrepreneurs de provence
+        </p>
+        <h1
+          id="hero-headline"
+          class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter"
+        >
+          Levez-vous tous les matins avec le sourire !
+        </h1>
+      </hgroup>
+      <p class="text-lg mt-4 text-canvas-600 max-w-xl">
+        Je vous accompagne pour faire décoller votre TPE et vous faire atteindre
+        vos objectifs personnels ! Rencontrons-nous, je suis à moins d’une heure
+        de chez vous.
+      </p>
+      <MainCallToAction />
     </div>
-  </div>
-</main>
+  </Container>
+</Section>

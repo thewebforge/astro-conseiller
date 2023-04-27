@@ -1,0 +1,58 @@
+---
+import Container from "./Container.astro";
+import Section from "@components/Section.astro";
+import Link from "@components/ui/Link.astro";
+import DeskIllustration from "@icons/illustrations/DeskIllustration";
+import MainCallToAction from "./MainCallToAction.astro";
+---
+
+<Section
+  class="py-8 lg:mt-8 lg:my-48 bg-brand-50 relative before:content-[''] before:absolute before:top-0 before:right-0 before:origin-top-right before:w-screen before:h-[50vh] before:bg-brand-50 before:z-[-1] before:-skew-y-2 before:-translate-y-[calc(100vw_*_sin(2deg))] after:content-[''] after:absolute after:bottom-0 after:left-0 after:origin-top-left after:w-screen after:h-[50vh] after:bg-brand-50 after:z-[-1] after:-skew-y-2 after:translate-y-[calc(100vw_*_sin(2deg))]"
+  aria-labelledby="conseiller-headline"
+>
+  <Container class="grid lg:grid-cols-2 place-items-center gap-16">
+    <div class="order-1 md:order-first">
+        <DeskIllustration class="w-full hidden md:block" />
+        <MainCallToAction />
+    </div>
+    <div>
+      <h2 id="conseiller-headline" class="text-3xl lg:text-4xl font-bold">
+        Pourquoi travailler avec moi ?
+      </h2>
+      <h3 class="text-xl lg:text-2xl font-bold mt-4">
+        Je suis Chef d’Entreprise
+      </h3>
+      <p class="text-lg mt-2 text-canvas-600 max-w-xl">
+        J’ai envie de soutenir, par le biais d’un accompagnement, les autres
+        chefs d’entreprise de ma région. J’interviens dans de nombreux secteurs.
+        Profitez d’un accompagnement d’excellence pour votre commerce ou encore
+        pour votre entreprise du BTP (menuiserie, plomberie, maçonnerie…).
+      </p>
+      <h3 class="text-xl lg:text-2xl font-bold mt-4">Je me déplace</h3>
+      <p class="text-lg mt-2 text-canvas-600 max-w-xl">
+        Une fois par mois, je suis chez vous. Je vais à la rencontre de mes
+        clients.
+      </p>
+      <h3 class="text-xl lg:text-2xl font-bold mt-4">Vous pouvez m’appeler</h3>
+      <p class="text-lg mt-2 text-canvas-600 max-w-xl">
+        Quand vous en avez besoin, sans facturation supplémentaire. Je vous
+        apporte une réponse rapide.
+      </p>
+      <h3 class="text-xl lg:text-2xl font-bold mt-4">
+        Je peux répondre en temps réel
+      </h3>
+      <p class="text-lg mt-2 text-canvas-600 max-w-xl">
+        Aux 6 questions importantes pour votre entreprise :
+      </p>
+      <ol class="list-disc pl-8 text-canvas-600">
+        <li>Suis-je rentable ?</li>
+        <li>Puis-je investir ?</li>
+        <li>Puis-je embaucher ?</li>
+        <li>Quelle est ma projection de résultat ?</li>
+        <li>Est-ce que mes clients me paient ?</li>
+        <li>Quelle est la situation de mon entreprise aujourd’hui ?</li>
+      </ol>
+      
+    </div>
+  </Container>
+</Section>
