@@ -1,5 +1,15 @@
 ---
-import { Icon } from "astro-icon";
+import FeelWellIcon from "@icons/FeelWellIcon";
+import GrowTurnoverIcon from "@icons/GrowTurnoverIcon";
+import GrowMoneyIcon from "@icons/GrowMoneyIcon";
+import GrowTeamIcon from "@icons/GrowTeamIcon";
+import PiggyIcon from "@icons/PiggyIcon";
+import HireIcon from "@icons/HireIcon";
+import CreateIcon from "@icons/CreateIcon";
+import ChefIcon from "@icons/ChefIcon";
+import SawIcon from "@icons/SawIcon";
+import RightArrowIcon from "@icons/RightArrowIcon";
+
 const title = "Mes formules d’accompagnement d’entreprises";
 const subTitle = "Mes formules d’accompagnement d’entreprises";
 const formules = [
@@ -7,63 +17,63 @@ const formules = [
     title: "Se sentir plus serein",
     name: "Rivazen",
     description: "Accompagnement au pilotage de l’entreprise.",
-    icon: "carbon:face-wink",
+    icon: FeelWellIcon,
     url: "/rivazen",
   },
   {
     title: "Augmenter son CA",
     name: "Rivabiz",
     description: "Accompagnement au développement du chiffre d’affaires.",
-    icon: "carbon:analytics",
+    icon: GrowTurnoverIcon,
     url: "/rivabiz",
   },
   {
     title: "Générer plus de résultat",
     name: "Rivagest",
     description: "Accompagnement à la gestion d’entreprise.",
-    icon: "carbon:chart-pie",
+    icon: GrowMoneyIcon,
     url: "/rivagest",
   },
   {
     title: "Embaucher et investir",
     name: "Rivaboost",
     description: "Accompagnement à l’embauche et à l’investissement.",
-    icon: "carbon:money",
+    icon: GrowTeamIcon,
     url: "/rivaboost",
   },
   {
     title: "Gérer sa trésorerie",
     name: "Rivatréso",
     description: "Accompagnement des entreprises en difficulté.",
-    icon: "carbon:chart-combo-stacked",
+    icon: PiggyIcon,
     url: "/rivatreso",
   },
   {
     title: "Recruter et manager",
     name: "Rivarecrut",
     description: "Accompagnement dans le recrutement et le management.",
-    icon: "carbon:partnership",
+    icon: HireIcon,
     url: "/rivarecrut",
   },
   {
     title: "Créer mon entreprise",
     name: "Rivacrea",
     description: "Accompagnement à la création d’entreprise.",
-    icon: "carbon:building-insights-3",
+    icon: CreateIcon,
     url: "/rivacrea",
   },
   {
     title: "Gérer son restaurant",
     name: "Rivaresto",
     description: "Accompagnement des restaurants.",
-    icon: "carbon:restaurant",
+    icon: ChefIcon,
     url: "/rivaresto",
   },
   {
     title: "Gérer sa menuiserie",
     name: "Rivabois",
     description: "Accompagnement des menuisiers.",
-    icon: "carbon:tree",
+    icon: SawIcon,
     url: "/rivabois",
   },
   
@@ -82,18 +92,18 @@ const formules = [
 <div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
   {
     formules.map((item) => (
-      <article class="flex gap-4 p-4 pt-16 border border-canvas-300 rounded relative isolate">
-        <div class="mt-1 p-6 w-20 h-20 bg-brand-50 border border-brand-500 rounded-full shrink-0 absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-          <Icon class="text-brand-500" name={item.icon} />
+      <article class="flex gap-4 p-6 border-2 border-brand-500 rounded-lg relative isolate">
+        <div class="mt-1 p-4 w-24 h-24 bg-white border-2 border-brand-500 rounded-full shrink-0 absolute top-0 left0 -translate-x-1/2 -translate-y-1/2 z-10">
+          <item.icon class="w-full" />
         </div>
         <div class="flex flex-col justify-between gap-4 w-full ">
           <div>
-            <h3 class="font-semibold text-lg">{item.title}</h3>
-            <p class="text-canvas-500 mt-2 leading-relaxed">
+            <h3 class="font-semibold text-lg text-right">{item.title}</h3>
+            <p class="text-canvas-700 mt-4">
               {item.description}
             </p>
           </div>
-          <a href={item.url} class="mt-auto text-right text-links-500 hover:text-links-800 after:content-[''] after:absolute after:inset-0 after:bg-transparent hover:after:border hover:after:border-brand-300 hover:after:shadow-md hover:after:shadow-brand-500/10 transition">découvrir {item.name} <Icon class="w-4 h-4 inline-block ml-2" name="carbon:arrow-right" /></a>
+          <a href={item.url} class="mt-auto text-right text-links-500 hover:text-links-800 after:content-[''] after:absolute after:inset-0 after:bg-transparent hover:after:shadow-lg hover:after:shadow-brand-500/10 transition">{item.name} <RightArrowIcon main="fill-current" class="w-3 h-3 inline-block ml-2" /></a>
         </div>
       </article>
     ))
