@@ -1,5 +1,7 @@
 ---
-import { Icon } from "astro-icon";
+import PhoneIcon from "@icons/PhoneIcon";
+import MailIcon from "@icons/MailIcon";
+import MapMarkerIcon from "@icons/MapMarkerIcon";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/Container.astro";
 import Sectionhead from "@components/Sectionhead.astro";
@@ -20,16 +22,16 @@ import Contactform from "@components/Contactform.astro";
           Vous avez quelque chose à me dire ? Je suis là pour vous aider. Utilisez le formulaire, envoyez-moi un email, ou appelez-moi.
         </p>
         <div class="mt-5">
-          <div class="flex items-center mt-2 space-x-2 text-canvas-600">
-            <Icon class="text-canvas-400 w-4 h-4" name="uil:map-marker" />
+          <div class="flex items-center mt-2 gap-4 text-canvas-600">
+            <MapMarkerIcon class="w-6 h-6" />
             <span>Avignon, France</span>
-          </div><div class="flex items-center mt-2 space-x-2 text-canvas-600">
-            <Icon class="text-canvas-400 w-4 h-4" name="uil:envelope" /><a
+          </div><div class="flex items-center mt-2 gap-4 text-canvas-600">
+            <MailIcon class="w-6 h-6" /><a
               href="mailto:hello@thewebforge.dev"
               class="rounded outline-none focus:ring-2 ring-offset-2 ring-links-500">hello@thewebforge.dev</a
             >
-          </div><div class="flex items-center mt-2 space-x-2 text-canvas-600">
-            <Icon class="text-canvas-400 w-4 h-4" name="uil:phone" /><a
+          </div><div class="flex items-center mt-2 gap-4 text-canvas-600">
+            <PhoneIcon class="w-6 h-6" /><a
               href="tel:+33665823689" class="rounded outline-none focus:ring-2 ring-offset-2 ring-links-500">+33 665 823 689</a
             >
           </div>

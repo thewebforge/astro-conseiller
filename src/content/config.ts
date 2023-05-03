@@ -32,9 +32,42 @@ const teamCollection = defineCollection({
   }),
 });
 
+const formuleCollection = defineCollection({
+  schema: z.object({
+    draft: z.boolean(),
+    name: z.string(),
+    intro: z.string(),
+    benefice: z.string(),
+    preuve: z
+      .object({
+        texte: z.string(),
+        lien: z
+          .object({
+            texte: z.string(),
+            url: z.string(),
+          })
+          .optional(),
+      })
+      .optional(),
+    logo: z.object({
+      src: z.string(),
+      alt: z.string(),
+    }),
+    image: z.object({
+      src: z.string(),
+      alt: z.string(),
+    }),
+    situation: z.array(z.string()),
+    avantages: z.array(z.string()),
+    actions: z.array(z.string()),
+    publishDate: z.string().transform((str) => new Date(str)),
+  }),
+});
+
 // 3. Export a single `collections` object to register your collection(s)
 //    This key should match your collection directory name in "src/content"
 export const collections = {
   blog: blogCollection,
   team: teamCollection,
+  formules: formuleCollection,
 };

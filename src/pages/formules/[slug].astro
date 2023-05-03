@@ -1,0 +1,105 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@layouts/Layout.astro";
+import Section from "@components/Section.astro";
+import Container from "@components/Container.astro";
+import { Picture } from "@astrojs/image/components";
+import MainCallToAction from "@components/MainCallToAction.astro";
+
+// Generate a new path for every collection entry
+export async function getStaticPaths() {
+  const blogEntries = await getCollection("formules");
+  return blogEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+// Get the entry directly from the prop on render
+const { entry } = Astro.props;
+
+const { Content } = await entry.render();
+---
+
+<Layout title={entry.data.title} canonical={entry.data.canonical}>
+  <Section>
+    <Container class="grid lg:grid-cols-2 gap-8 md:gap-16">
+      <div class="flex flex-col justify-center items-start gap-4 md:gap-8">
+        <h1 class="font-bold text-3xl lg:text-4xl">
+          {entry.data.intro}
+        </h1>
+        <h2 class="font-bold text-2xl lg:text-3xl">
+          {entry.data.benefice}
+        </h2>
+        {
+          entry.data.preuve && (
+            <p class="text-xs">
+              {entry.data.preuve.texte}
+              {entry.data.preuve.lien && (
+                <a
+                  class="text-brand-500 hover:text-brand-800"
+                  href={entry.data.preuve.lien.url}
+                >
+                  {entry.data.preuve.lien.texte}
+                </a>
+              )}
+            </p>
+          )
+        }
+        <MainCallToAction class="w-full" />
+      </div>
+      <div class="w-full order-first lg:order-last">
+        <Picture
+          src={entry.data.image.src}
+          alt={entry.data.image.alt}
+          sizes="(max-width: 800px) 100vw, 800px"
+          widths={[200, 400, 800]}
+          aspectRatio="16:9"
+          background="#ffffff"
+          fit="cover"
+          position="center"
+          loading="eager"
+          decoding="sync"
+          class="w-full mx-auto max-w-3xl rounded-md shadow-lg mt-8"
+        />
+      </div>
+    </Container>
+  </Section>
+  <Section>
+    <Container class="grid md:grid-cols-2 lg:grid-cols-3 gap-16">
+      <div class="border border-brand-500 rounded-lg">
+        <h3 class="px-4 py-2 bg-brand-500 text-white">
+          Quelle est votre situation ?
+        </h3>
+        <ul class="p-4 list-disc pl-8 marker:text-accent-500">
+          {entry.data.situation.map((item: string) => <li>{item}</li>)}
+        </ul>
+      </div>
+      <div class="border border-brand-500 rounded-lg">
+        <h3 class="px-4 py-2 bg-brand-500 text-white">
+          Votre conseiller personnel :
+        </h3>
+        <ul class="p-4 list-disc pl-8 marker:text-accent-500">
+          {entry.data.avantages.map((item: string) => <li>{item}</li>)}
+        </ul>
+      </div>
+      <div class="border border-brand-500 rounded-lg">
+        <h3 class="px-4 py-2 bg-brand-500 text-white">
+          Notre plan d’actions :
+        </h3>
+        <ul class="p-4 list-disc pl-8 marker:text-accent-500">
+          {entry.data.actions.map((item: string) => <li>{item}</li>)}
+        </ul>
+      </div>
+    </Container>
+  </Section>
+  <Section>
+    <Container>
+      <div
+        class="mx-auto prose prose-slate prose-lg mt-6 max-w-3xl prose-a:text-brand-500 prose-a:no-underline hover:prose-a:text-brand-800 marker:prose-ul:text-accent-500 prose-blockquote:border-accent-500 prose-blockquote:bg-accent-50 prose-blockquote:py-1 prose-img:w-full prose-img:mx-auto prose-img:max-w-3xl prose-img:rounded-md prose-img:shadow-lg prose-img:my-8 prose-li:m-0"
+      >
+        <Content />
+      </div>
+    </Container>
+  </Section>
+</Layout>

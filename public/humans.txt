@@ -1,0 +1,12 @@
+/* TEAM */
+	Developer: Cédric Bontems
+	Contact: hello [at] thewebforge.dev
+	Twitter: @cedricbontems
+	From: Avignon, Occitanie, France
+
+/* SITE */
+	Last update: 2023/04/28
+	Language: Français
+	Doctype: HTML5
+	Framework: Astro.build
+	IDE: VS Code
