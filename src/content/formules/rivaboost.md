@@ -29,7 +29,7 @@ logo: {
     alt: "Janette Lynch"
 }
 image: {
-    src: "/src/content/formules/_images/investir-se-developper-avec-rivalis.jpg",
+    src: "/src/content/formules/_images/investir-se-developper-avec-rivalis.avif",
     alt: "Janette Lynch"
 }
 publishDate: "2022-11-07 15:39"

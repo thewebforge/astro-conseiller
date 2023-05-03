@@ -33,7 +33,7 @@ logo: {
     alt: "Janette Lynch"
 }
 image: {
-    src: "/src/content/formules/_images/Special-menuisier.png",
+    src: "/src/content/formules/_images/Special-menuisier.avif",
     alt: "Janette Lynch"
 }
 publishDate: "2022-11-07 15:39"

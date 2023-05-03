@@ -32,7 +32,7 @@ logo: {
     alt: "Janette Lynch"
 }
 image: {
-    src: "/src/content/formules/_images/etre-plus-serein-rivalis.jpg",
+    src: "/src/content/formules/_images/etre-plus-serein-rivalis.avif",
     alt: "Janette Lynch"
 }
 publishDate: "2022-11-07 15:39"
