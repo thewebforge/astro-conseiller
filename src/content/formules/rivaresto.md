@@ -30,7 +30,7 @@ logo: {
     alt: "Janette Lynch"
 }
 image: {
-    src: "/src/content/formules/_images/rivaresto.avif",
+    src: "/src/content/formules/_images/rivaresto.webp",
     alt: "Janette Lynch"
 }
 publishDate: "2022-11-07 15:39"

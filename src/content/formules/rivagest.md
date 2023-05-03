@@ -31,7 +31,7 @@ logo: {
     alt: "Janette Lynch"
 }
 image: {
-    src: "/src/content/formules/_images/avoir-plus-de-resultat-rivalis.avif",
+    src: "/src/content/formules/_images/avoir-plus-de-resultat-rivalis.webp",
     alt: "Janette Lynch"
 }
 publishDate: "2022-11-07 15:39"

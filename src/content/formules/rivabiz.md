@@ -26,7 +26,7 @@ logo: {
     alt: "Janette Lynch"
 }
 image: {
-    src: "/src/content/formules/_images/developper-son-chiffre-affaires-avec-rivalis.avif",
+    src: "/src/content/formules/_images/developper-son-chiffre-affaires-avec-rivalis.webp",
     alt: "Janette Lynch"
 }
 publishDate: "2022-11-07 15:39"
